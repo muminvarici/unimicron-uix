@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { SectionProps } from '../utils/SectionProps';
 import Input from '../components/elements/Input';
 import Button from '../components/elements/Button';
+import SweetAlert from 'sweetalert2-react';
 
 const propTypes = {
     ...SectionProps.types
@@ -27,12 +28,13 @@ const ContactUs = ({
 
     const [submitButtonLoadingActive, setSubmitButtonLoadingActive] = useState(false);
     const [input, setInput] = useState({});
+    const [infoMessageVisibility, setInfoMessageVisibility] = useState(false);
 
     const clickSubmit = (e) => {
         e.preventDefault();
         setSubmitButtonLoadingActive(true);
         setTimeout(() => {
-            alert("mail gönderilecek...");
+            setInfoMessageVisibility(true);
             setSubmitButtonLoadingActive(false);
         }, 1000);
     }
@@ -63,6 +65,13 @@ const ContactUs = ({
             {...props}
             className={outerClasses}
         >
+            <SweetAlert
+                show={infoMessageVisibility}
+                title="Info"
+                text="Mesajınız iletildi."
+                confirmButtonColor="#000000"
+                onConfirm={() => setInfoMessageVisibility(false)}
+            />
             <div className="container-sm">
                 <div className={innerClasses}>
                     <div className="hero-content">
