@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
-import ButtonGroup from '../elements/ButtonGroup';
-import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
-import { Images } from '../../views/home/images';
+import { Images } from './home/images';
 
 const propTypes = {
   ...SectionProps.types
