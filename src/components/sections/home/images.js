@@ -15,9 +15,9 @@ export class Images extends React.Component {
     return (
       <>
         <AwesomeSlider >
-          <div data-src={imageOne} />
-          <div data-src={imageTwo} />
-          <div data-src={imageThree} />
+          <div className="has-shadow" data-src={imageOne} />
+          <div className="has-shadow" data-src={imageTwo} />
+          <div className="has-shadow" data-src={imageThree} />
         </AwesomeSlider>
       </>
     );
