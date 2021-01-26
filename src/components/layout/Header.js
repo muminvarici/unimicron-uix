@@ -15,7 +15,7 @@ const propTypes = {
 const defaultProps = {
   navPosition: '',
   hideNav: false,
-  hideSignin: false,
+  hideSignin: true,
   bottomOuterDivider: false,
   bottomDivider: false
 }
@@ -106,15 +106,8 @@ const Header = ({
                     isActive && 'is-active'
                   )}>
                 <div className="header-nav-inner">
-                  <ul className={
-                    classNames(
-                      'list-reset text-xs',
-                      navPosition && `header-nav-${navPosition}`
-                    )}>
-                    <li>
-                      <Link to="#0" onClick={closeMenu}>Documentation</Link>
-                    </li>
-                  </ul>
+                  {getLink(navPosition, closeMenu,"About Us","about-us")}
+                  {getLink(navPosition, closeMenu,"Contact Us","contact-us")}
                   {!hideSignin &&
                     <ul
                       className="list-reset header-nav-right"
@@ -136,3 +129,17 @@ Header.propTypes = propTypes;
 Header.defaultProps = defaultProps;
 
 export default Header;
+
+function getLink(navPosition, closeMenu,text,link) {
+  return ( 
+    <ul className={classNames(
+      'list-reset text-xs',
+      navPosition && `header-nav-${navPosition}`
+    )}>
+      <li>
+        <Link to={link} onClick={closeMenu}>{text}</Link>
+      </li>
+    </ul>
+  );
+}
+

@@ -19,16 +19,10 @@ const FooterNav = ({
     >
       <ul className="list-reset">
         <li>
-          <Link to="#0">Contact</Link>
+          {getLink("Contact us", "contact-us")}
         </li>
         <li>
-          <Link to="#0">About us</Link>
-        </li>
-        <li>
-          <Link to="#0">FAQ's</Link>
-        </li>
-        <li>
-          <Link to="#0">Support</Link>
+          {getLink("About us", "about-us")}
         </li>
       </ul>
     </nav>
@@ -36,3 +30,11 @@ const FooterNav = ({
 }
 
 export default FooterNav;
+
+function getLink(text, link) {
+  return (
+    <li>
+      <li></li><Link to={link}>{text}</Link>
+    </li>
+  );
+}
