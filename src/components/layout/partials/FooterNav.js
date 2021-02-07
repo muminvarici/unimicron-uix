@@ -18,6 +18,7 @@ const FooterNav = ({
       className={classes}
     >
       <ul className="list-reset">
+          {getLink("Home", "")}
           {getLink("Sectors", "sectors")}
           {getLink("Contact us", "contact-us")}
           {getLink("About us", "about-us")}
