@@ -70,7 +70,7 @@ const ContactUs = ({
             <div className="tiles-item reveal-from-bottom" data-reveal-delay="600">
                 <div className="tiles-item-inner">
                     <div className="features-tiles-item-header">
-                        <a href="tel:+40 762 321 762">
+                        <a href="tel:+90 532 707 81 93">
                             <svg class="mb-16" focusable="false" width="64" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z">
                                 </path>
@@ -81,7 +81,7 @@ const ContactUs = ({
                         <h4 className="mt-0 mb-8">
                             Give us a ring
                         </h4>
-                        <p>Alper Ünal<br />  <a href="tel:+40 762 321 762">+40 762 321 762</a><br /> Mon - Fri, 8:00-22:00</p>
+                        <p>Alper Ünal<br />  <a href="tel:+90 532 707 81 93">+90 532 707 81 93</a><br /> Mon - Fri, 8:00-22:00</p>
                     </div>
                 </div>
             </div >
@@ -119,7 +119,7 @@ const ContactUs = ({
             <SweetAlert
                 show={infoMessageVisibility}
                 title="Info"
-                text="Mesajınız iletildi."
+                text="Your message has been sent."
                 confirmButtonColor="#000000"
                 onConfirm={() => setInfoMessageVisibility(false)}
             />
