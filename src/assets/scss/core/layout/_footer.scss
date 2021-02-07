@@ -1,6 +1,5 @@
 .site-footer {
 	position: relative;
-
 	&::before {
 		content: '';
 		position: absolute;
@@ -81,7 +80,7 @@
 	}
 }
 
-.footer-social,
+.footer-social2,
 .footer-nav {
 
 	a {
@@ -98,7 +97,7 @@
 	}
 }
 
-.footer-social {
+.footer-social2 {
 
 	ul {
 		margin-right: -($footer-social--inner-padding + $footer-social--outer-padding-h);

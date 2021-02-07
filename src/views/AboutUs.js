@@ -1,9 +1,9 @@
 import React from 'react';
-import FeaturesTiles from '../components/sections/FeaturesTiles';
+import AboutUsSection from '../components/sections/AboutUsSection';
 
 const AboutUs = () => {
     return (  
-        <FeaturesTiles />
+        <AboutUsSection />
     );
 }
  

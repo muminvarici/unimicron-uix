@@ -49,10 +49,10 @@ export class LanguageSwitcher extends React.Component {
                 <p className="small">
                     {getTranslation(this.state.lang, 'lang-choice')}
                 </p> */}
-                <LanguageSwitcherSelector
+                {/* <LanguageSwitcherSelector
                     lang={this.state.lang}
                     handleChangeLanguage={this.changeLanguageHandler}
-                />
+                /> */}
             </div>
         )
     }

@@ -47,7 +47,8 @@ const ContactUs = ({
 
 
     const outerClasses = classNames(
-        'hero section center-content illustration-section-01',
+        // 'hero section center-content illustration-section-01',
+        'hero section center-content',
         topOuterDivider && 'has-top-divider',
         bottomOuterDivider && 'has-bottom-divider',
         hasBgColor && 'has-bg-color',

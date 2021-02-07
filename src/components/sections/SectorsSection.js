@@ -11,7 +11,7 @@ const propTypes = {
 const defaultProps = {
   ...SectionTilesProps.defaults
 }
-const FeaturesTiles = ({
+const SectorsSection = ({
   className,
   topOuterDivider,
   bottomOuterDivider,
@@ -62,7 +62,7 @@ const FeaturesTiles = ({
             <div className="tiles-item reveal-from-bottom">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
+                  <div className="features-tiles-item-image mb-32">
                     <Image
                       src={require('./../../assets/images/feature-tile-icon-01.svg')}
                       alt="Features tile icon 01"
@@ -198,7 +198,7 @@ const FeaturesTiles = ({
   );
 }
 
-FeaturesTiles.propTypes = propTypes;
-FeaturesTiles.defaultProps = defaultProps;
+SectorsSection.propTypes = propTypes;
+SectorsSection.defaultProps = defaultProps;
 
-export default FeaturesTiles;
+export default SectorsSection;

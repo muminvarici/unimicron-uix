@@ -12,8 +12,9 @@ const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 export class Images extends React.Component {
 
-  images = ["slider1.jpg",
-    "slider2.jpg"
+  images = [
+    require('./../../../assets/images/slider1.jpg'),
+    require('./../../../assets/images/slider2.jpg'),
   ];
   constructor() {
     super()

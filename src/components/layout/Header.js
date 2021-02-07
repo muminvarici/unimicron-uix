@@ -107,6 +107,7 @@ const Header = ({
                     isActive && 'is-active'
                   )}>
                 <div className="header-nav-inner">
+                  {getLink(navPosition, closeMenu, "Sectors", "sectors")}
                   {getLink(navPosition, closeMenu, "About Us", "about-us")}
                   {getLink(navPosition, closeMenu, "Contact Us", "contact-us")}
                   {!hideSignin &&

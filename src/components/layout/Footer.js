@@ -40,12 +40,13 @@ const Footer = ({
             topDivider && 'has-top-divider'
           )}>
           <div className="footer-top space-between text-xxs">
-            <Logo />
+            {/* <Logo /> */}
             <FooterSocial />
           </div>
           <div className="footer-bottom space-between text-xxs invert-order-desktop">
             <FooterNav />
             <div className="footer-copyright">Made by <a href="https://github.com/procidis">Procidis</a>. Derived from Cruip. All right reserved</div>
+            <Logo />
           </div>
         </div>
       </div>
