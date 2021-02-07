@@ -4,6 +4,7 @@ import { SectionProps } from '../utils/SectionProps';
 import Input from '../components/elements/Input';
 import Button from '../components/elements/Button';
 import SweetAlert from 'sweetalert2-react';
+import Image from '../components/elements/Image';
 
 const propTypes = {
     ...SectionProps.types
@@ -46,7 +47,7 @@ const ContactUs = ({
 
 
     const outerClasses = classNames(
-        'hero section center-content',
+        'hero section center-content illustration-section-01',
         topOuterDivider && 'has-top-divider',
         bottomOuterDivider && 'has-bottom-divider',
         hasBgColor && 'has-bg-color',
@@ -60,6 +61,56 @@ const ContactUs = ({
         bottomDivider && 'has-bottom-divider'
     );
 
+    const tilesClasses = classNames(
+        'tiles-wrap center-content'
+    );
+
+    const getCallItem = () => {
+        return (
+            <div className="tiles-item reveal-from-bottom" data-reveal-delay="600">
+                <div className="tiles-item-inner">
+                    <div className="features-tiles-item-header">
+                        <a href="tel:+90 532 707 81 93">
+                            <svg class="mb-16" focusable="false" width="64" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div className="features-tiles-item-content">
+                        <h4 className="mt-0 mb-8">
+                            Give us a ring
+                        </h4>
+                        <p>Alper Ünal<br />  <a href="tel:+90 532 707 81 93">+90 532 707 81 93</a><br /> Mon - Fri, 8:00-22:00</p>
+                    </div>
+                </div>
+            </div >
+        );
+    }
+
+    const getLocationItem = () => {
+        return (
+            <a href="geo:124.028582,-29.201930" target="_blank">
+                <div className="tiles-item reveal-from-bottom" data-reveal-delay="400">
+                    <div className="tiles-item-inner">
+                        <div className="features-tiles-item-header">
+                            <svg class="mb-16" focusable="false" width="64" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18 8c0-3.31-2.69-6-6-6S6 4.69 6 8c0 4.5 6 11 6 11s6-6.5 6-11zm-8 0c0-1.1.9-2 2-2s2 .9 2 2-.89 2-2 2c-1.1 0-2-.9-2-2zM5 20v2h14v-2H5z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div className="features-tiles-item-content">
+                            <h4 className="mt-0 mb-8">
+                                Find us at the office
+                        </h4>
+                            <p>aasd mahallesi, nr. 8, <br /> 7652 Ünye/Ordu, <br /> Türkiye</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        );
+    }
+
     return (
         <section
             {...props}
@@ -68,22 +119,15 @@ const ContactUs = ({
             <SweetAlert
                 show={infoMessageVisibility}
                 title="Info"
-                text="Mesajınız iletildi."
+                text="Your message has been sent."
                 confirmButtonColor="#000000"
                 onConfirm={() => setInfoMessageVisibility(false)}
             />
-            <div className="container-sm">
+            <div className="container">
                 <div className={innerClasses}>
-                    <div className="hero-content">
-                        <div className="container-xs">
-                            <div className="reveal-from-bottom" data-reveal-delay="600">
-                                {/* <div className="cta-action">
-                                    <Input id="newsletter" width="44" type="email" label="Subscribe" labelHidden hasIcon="right" placeholder="Your best email">
-                                        <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9 5H1c-.6 0-1 .4-1 1s.4 1 1 1h8v5l7-6-7-6v5z" fill="#376DF9" />
-                                        </svg>
-                                    </Input>
-                                </div>  */}
+                    <div className={tilesClasses}>
+                        <div className="tiles-item reveal-from-bottom" data-reveal-delay="400">
+                            <div className="tiles-item-inner">
                                 <form id="contact-form" method="POST">
                                     <Input type="text" className="form-control" placeholder="Title" name="title" onChange={handleInputChange} />
                                     <Input type="text" className="form-control" name="given-name" placeholder="Name" onChange={handleInputChange} />
@@ -93,6 +137,8 @@ const ContactUs = ({
                                 </form>
                             </div>
                         </div>
+                        {getLocationItem()}
+                        {getCallItem()}
                     </div>
                 </div>
             </div>

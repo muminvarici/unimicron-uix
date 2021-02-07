@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
+import { LanguageSwitcher } from './LanguageSelector';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -44,7 +45,7 @@ const Header = ({
       document.removeEventListener('click', clickOutside);
       closeMenu();
     };
-  });  
+  });
 
   const openMenu = () => {
     document.body.classList.add('off-nav-is-active');
@@ -66,7 +67,7 @@ const Header = ({
     if (!nav.current) return
     if (!isActive || nav.current.contains(e.target) || e.target === hamburger.current) return;
     closeMenu();
-  }  
+  }
 
   const classes = classNames(
     'site-header',
@@ -106,20 +107,22 @@ const Header = ({
                     isActive && 'is-active'
                   )}>
                 <div className="header-nav-inner">
-                  {getLink(navPosition, closeMenu,"About Us","about-us")}
-                  {getLink(navPosition, closeMenu,"Contact Us","contact-us")}
+                  {getLink(navPosition, closeMenu, "About Us", "about-us")}
+                  {getLink(navPosition, closeMenu, "Contact Us", "contact-us")}
                   {!hideSignin &&
-                    <ul
-                      className="list-reset header-nav-right"
-                    >
+                    <ul className="list-reset header-nav-right">
                       <li>
                         <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sign up</Link>
                       </li>
                     </ul>}
+                  <li>
+                    <LanguageSwitcher />
+                  </li>
                 </div>
               </nav>
             </>}
         </div>
+
       </div>
     </header>
   );
@@ -130,8 +133,8 @@ Header.defaultProps = defaultProps;
 
 export default Header;
 
-function getLink(navPosition, closeMenu,text,link) {
-  return ( 
+function getLink(navPosition, closeMenu, text, link) {
+  return (
     <ul className={classNames(
       'list-reset text-xs',
       navPosition && `header-nav-${navPosition}`

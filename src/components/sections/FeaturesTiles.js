@@ -24,7 +24,7 @@ const FeaturesTiles = ({
 }) => {
 
   const outerClasses = classNames(
-    'features-tiles section',
+    'features-tiles section illustration-section-01',
     topOuterDivider && 'has-top-divider',
     bottomOuterDivider && 'has-bottom-divider',
     hasBgColor && 'has-bg-color',
