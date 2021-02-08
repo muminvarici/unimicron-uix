@@ -81,9 +81,9 @@ const ContactUs = ({
                         </a>
                     </div>
                     <div className="features-tiles-item-content">
-                        <h4 className="mt-0 mb-8">
+                        <h5 className="mt-0 mb-8">
                             Give us a ring
-                        </h4>
+                        </h5>
                         <p>Alper Ünal<br />  <a href={link}>{linkText}</a><br /> Mon - Fri, 8:00-22:00</p>
                     </div>
                 </div>
@@ -105,9 +105,9 @@ const ContactUs = ({
                         </a>
                     </div>
                     <div className="features-tiles-item-content">
-                        <h4 className="mt-0 mb-8">
+                        <h5 className="mt-0 mb-8">
                             Find us at the office
-                        </h4>
+                        </h5>
                         <a href={link} target="_blank">
                             <p>aasd mahallesi, nr. 8, <br /> 7652 Ünye/Ordu, <br /> Türkiye</p>
                         </a>

@@ -2,14 +2,14 @@
 
 // Color
 $link--color: (
-	link: 								get-color(primary ,3),
-	link-hover: 						get-color(secondary, 3),
+	link: 								get-color(dark ,3),
+	link-hover: 						get-color(light, 2),
 	header-link: 						get-color(light, 3),
 	header-link-hover: 					get-color(light, 2),
 	header-link-mobile: 				get-color(light, 1),
 	header-link-mobile-hover: 			null,
-	footer-link: 						get-color(light, 2),
-	footer-link-hover: 					get-color(light, 3),
+	footer-link: 						get-color(light, 3),
+	footer-link-hover: 					get-color(light, 2),
 	footer-block-link: 					get-color(light, 2),
 	footer-block-link-hover: 			get-color(light, 1),
 	button-link: 						get-color(light, 2),
@@ -20,15 +20,15 @@ $link--color: (
 	link-inverse: 						get-color(light, 3),
 	link-hover-inverse: 				null,
 	header-link-inverse: 				get-color(dark, 3),
-	header-link-hover-inverse:			get-color(primary, 1),
+	header-link-hover-inverse:			get-color(light, 2),
 	footer-link-inverse: 				null,
 	footer-link-hover-inverse: 			null,
 	footer-block-link-inverse: 			null,
 	footer-block-link-hover-inverse:	null,
 	button-link-inverse: 				null,
-	button-link-hover-inverse:			get-color(primary, 1),
+	button-link-hover-inverse:			get-color(dark, 1),
 	func-link-inverse: 					null,
-	func-link-hover-inverse:			get-color(primary, 1)	
+	func-link-hover-inverse:			get-color(dark, 1)	
 );
 
 // Font-weight

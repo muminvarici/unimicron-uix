@@ -45,7 +45,7 @@ const Footer = ({
           </div>
           <div className="footer-bottom space-between text-xxs invert-order-desktop">
             <FooterNav />
-            <div className="footer-copyright">Made by <a href="https://github.com/procidis">Procidis</a>. Derived from Cruip. All right reserved</div>
+            <div className="footer-copyright">Made by <a href="https://github.com/procidis"><strong>Procidis</strong></a>. Derived from Cruip. All right reserved</div>
             <Logo />
           </div>
         </div>
