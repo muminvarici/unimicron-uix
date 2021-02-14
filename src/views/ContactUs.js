@@ -124,7 +124,7 @@ const ContactUs = ({
         >
             <SweetAlert
                 show={infoMessageVisibility}
-                title="Info"
+                // title="Info"
                 text="Your message has been sent."
                 confirmButtonColor="#000000"
                 onConfirm={() => setInfoMessageVisibility(false)}
