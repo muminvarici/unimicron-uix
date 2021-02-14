@@ -144,11 +144,9 @@ const ContactUs = ({
             </div>
 
             <div className="container">
-                <div className={innerClasses}>
-                    <div className={tilesClasses}>
-                        {getLocationItem()}
-                        {getCallItem()}
-                    </div>
+                <div className={tilesClasses}>
+                    {getLocationItem()}
+                    {getCallItem()}
                 </div>
             </div>
         </section>
