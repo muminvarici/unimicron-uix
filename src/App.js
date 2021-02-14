@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, createContext } from 'react';
 import { useLocation, Switch } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
@@ -12,6 +12,8 @@ import Home from './views/Home';
 import AboutUs from './views/AboutUs';
 import ContactUs from './views/ContactUs';
 import Sectors from './views/Sectors';
+import { dictionaryList } from './languages/languages';
+import { LanguageProvider } from './languages/LanguageProvider';
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -20,6 +22,12 @@ const trackPage = page => {
   ReactGA.set({ page });
   ReactGA.pageview(page);
 };
+
+export const LanguageContext = createContext({
+  userLanguage: 'tr',
+  dictionary: dictionaryList.tr
+});
+
 
 const App = () => {
 
@@ -35,21 +43,19 @@ const App = () => {
   }, [location]);
 
   return (
-    <ScrollReveal
-      ref={childRef}
-      children={() => (
-        <Switch>
-          <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-          <AppRoute exact path="/sectors" component={Sectors} layout={LayoutDefault} />
-          <AppRoute exact path="/about-us" component={AboutUs} layout={LayoutDefault} />
-          <AppRoute exact path="/contact-us" component={ContactUs} layout={LayoutDefault} />
-        </Switch>
-      )} />
+    <LanguageProvider>
+      <ScrollReveal
+        ref={childRef}
+        children={() => (
+          <Switch>
+            <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+            <AppRoute exact path="/sectors" component={Sectors} layout={LayoutDefault} />
+            <AppRoute exact path="/about-us" component={AboutUs} layout={LayoutDefault} />
+            <AppRoute exact path="/contact-us" component={ContactUs} layout={LayoutDefault} />
+          </Switch>
+        )} />
+    </LanguageProvider>
   );
 }
 
 export default App;
-
-export const LanguageContext = React.createContext({
-  language: "tr",
-});

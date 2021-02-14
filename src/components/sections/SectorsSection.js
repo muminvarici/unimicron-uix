@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames';
 import { SectionTilesProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Image from '../elements/Image';
+import { getLanguageText } from '../../languages/languages';
+import { LanguageContext } from '../../App';
 
 const propTypes = {
   ...SectionTilesProps.types
@@ -43,20 +45,12 @@ const SectorsSection = ({
     'tiles-wrap center-content',
     pushLeft && 'push-left'
   );
-
-  const sectionHeader = {
-    tr: {
-      title: 'Burda sektörlerle ilgili açıklamalar var....',
-      paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
-    },
-    en: {
-      title: 'There will be sector explenations....',
-      paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
-    }
-  };
+  const languageContext = useContext(LanguageContext);
 
   const getSectionHeader = () => {
-    return sectionHeader["en"];
+    const languageText = getLanguageText({ languageContext, textId: "Sectors" });
+    console.log(languageText);
+    return languageText;
   }
 
 

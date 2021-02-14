@@ -1,54 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LanguageContext } from '../../App';
+import { languageOptions } from '../../languages/languages';
 import Select from '../elements/Select';
 
-const languages = [
-    { code: 'en', name: 'English' },
-    { code: 'rus', name: 'Русский' },
-    { code: 'deu', name: 'Deutsch' }
-]
+export default function LanguageSwitcher() {
+    const { userLanguage, userLanguageChange } = useContext(LanguageContext);
 
-const translations = {
-    'en': {
-        'header': 'Spring',
-        'paragraf': 'Hello',
-        'lang-choice': 'Choose your language:'
-    },
-    'deu': {
-        'header': 'Frühling',
-        'paragraf': 'Hallo',
-        'lang-choice': 'Wählen Sie Ihre Sprache:'
-    },
-    'rus': {
-        'header': 'Весна',
-        'paragraf': 'Привет',
-        'lang-choice': 'Выберите ваш язык:'
-    }
-}
+    // set selected language by calling context method
+    const handleLanguageChange = e => userLanguageChange(e.target.value);
 
-const getTranslation = (lang, text) => {
-    return translations[lang][text];
-}
-
-export class LanguageSwitcher extends React.Component { 
-    changeLanguageHandler = (lang) => {
-        this.setState({ lang: lang });
-    }
-
-    render() {
-        console.log(this.state);
-        return (
-            
-            <div className="languageSelector">
-                <Select class="form-select" id="color" size="sm" onChange={this.onChange}  >
-                    <option vlaue="en" >EN</option>
-                    <option vlaue="tr" >TR</option>
-                    <option vlaue="de" >DEU</option>
-                </Select>
-            </div>
-        )
-    }
-    onChange = e => {
-        this.props.handleChangeLanguage && this.props.handleChangeLanguage(e.target.className);
-        console.log("language switched to", e.target.value);
-    }
+    return (
+        <Select id="color" size="sm" onChange={handleLanguageChange} value={userLanguage} >
+            {/* <option vlaue="en" >EN</option>
+            <option vlaue="tr" >TR</option>
+            <option vlaue="de" >DEU</option> */}
+            {Object.entries(languageOptions).map(([id, name]) => (
+                <option key={id} value={id}>{name}</option>
+            ))}
+        </Select>
+    ) 
 }

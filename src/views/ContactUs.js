@@ -74,7 +74,7 @@ const ContactUs = ({
                 <div className="tiles-item-inner">
                     <div className="features-tiles-item-header">
                         <a href={link}>
-                            <svg class="mb-16" focusable="false" width="64" viewBox="0 0 24 24" aria-hidden="true">
+                            <svg focusable="false" width="64" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z">
                                 </path>
                             </svg>
@@ -98,7 +98,7 @@ const ContactUs = ({
                 <div className="tiles-item-inner">
                     <div className="features-tiles-item-header">
                         <a href={link} target="_blank">
-                            <svg class="mb-16" focusable="false" width="64" viewBox="0 0 24 24" aria-hidden="true">
+                            <svg focusable="false" width="64" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M18 8c0-3.31-2.69-6-6-6S6 4.69 6 8c0 4.5 6 11 6 11s6-6.5 6-11zm-8 0c0-1.1.9-2 2-2s2 .9 2 2-.89 2-2 2c-1.1 0-2-.9-2-2zM5 20v2h14v-2H5z">
                                 </path>
                             </svg>
@@ -136,7 +136,7 @@ const ContactUs = ({
                             <Input type="text" className="form-control" placeholder="Title" name="title" onChange={handleInputChange} />
                             <Input type="text" className="form-control" name="given-name" placeholder="Name" onChange={handleInputChange} />
                             <Input type="email" placeholder="Email address" name="email" className="form-control" aria-describedby="emailHelp" onChange={handleInputChange} />
-                            <Input type="textarea" placeholder="Message" className="form-control" rows="3" name="message" onChange={handleInputChange}></Input>
+                            <Input type="textarea" placeholder="Message" className="form-control" rows={3} name="message" onChange={handleInputChange}></Input>
                             <Button type="button" onClick={clickSubmit} color="dark" loading={submitButtonLoadingActive} >Submit</Button>
                         </form>
                     </div>
