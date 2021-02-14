@@ -56,14 +56,14 @@ const SectorsSection = ({
     >
       <div className="container">
         <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
+          <SectionHeader data={sectionHeader} className={["reveal-from-bottom", "center-content"]} data-reveal-delay="400" />
           <div className={tilesClasses}>
-            {getSectorItem("kedi_kumu.jpg", 1,"Kedi kumu","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
-            {getSectorItem("kedi_kumu.jpg", 2,"Kedi kumu","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
-            {getSectorItem("kedi_kumu.jpg", 3,"Kedi kumu","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
-            {getSectorItem("kedi_kumu.jpg", 4,"Kedi kumu","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
-            {getSectorItem("kedi_kumu.jpg", 5,"Kedi kumu","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
-            {getSectorItem("kedi_kumu.jpg", 6,"Kedi kumu","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
+            {getSectorItem("kedi_kumu.jpg", 1, "Kedi kumu", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
+            {getSectorItem("kedi_kumu.jpg", 2, "Kedi kumu", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
+            {getSectorItem("kedi_kumu.jpg", 3, "Kedi kumu", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
+            {getSectorItem("kedi_kumu.jpg", 4, "Kedi kumu", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
+            {getSectorItem("kedi_kumu.jpg", 5, "Kedi kumu", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
+            {getSectorItem("kedi_kumu.jpg", 6, "Kedi kumu", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
 
           </div>
         </div>
@@ -77,8 +77,9 @@ SectorsSection.defaultProps = defaultProps;
 
 export default SectorsSection;
 
-function getSectorItem(imageName, index,title,bodyText) {
-  return <div className="tiles-item reveal-from-bottom" data-reveal-delay={200 + index * 200}>
+function getSectorItem(imageName, index, title, bodyText) {
+  return <div className="tiles-item reveal-from-bottom" data-reveal-delay={400 + (index % 4) * 200
+  }>
     <div className="tiles-item-inner">
       <div className="features-tiles-item-header">
         <div className="features-tiles-item-image mb-16">
@@ -97,5 +98,5 @@ function getSectorItem(imageName, index,title,bodyText) {
         </p>
       </div>
     </div>
-  </div>;
+  </div >;
 }
