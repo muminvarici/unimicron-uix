@@ -45,9 +45,20 @@ const SectorsSection = ({
   );
 
   const sectionHeader = {
-    title: 'Burda sektörlerle ilgili açıklamalar var....',
-    paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
+    tr: {
+      title: 'Burda sektörlerle ilgili açıklamalar var....',
+      paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
+    },
+    en: {
+      title: 'There will be sector explenations....',
+      paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
+    }
   };
+
+  const getSectionHeader = () => {
+    return sectionHeader["en"];
+  }
+
 
   return (
     <section
@@ -56,7 +67,7 @@ const SectorsSection = ({
     >
       <div className="container">
         <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className={["reveal-from-bottom", "center-content"]} data-reveal-delay="400" />
+          <SectionHeader data={getSectionHeader()} className={["reveal-from-bottom", "center-content"]} data-reveal-delay="400" />
           <div className={tilesClasses}>
             {getSectorItem("kedi_kumu.jpg", 1, "Kedi kumu", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
             {getSectorItem("kedi_kumu.jpg", 2, "Kedi kumu", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}

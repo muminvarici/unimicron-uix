@@ -32,7 +32,7 @@ export default FooterNav;
 function getLink(text, link) {
   return (
     <li>
-      <li></li><Link to={link}>{text}</Link>
+      <Link to={link}>{text}</Link>
     </li>
   );
 }

@@ -49,3 +49,7 @@ const App = () => {
 }
 
 export default App;
+
+export const LanguageContext = React.createContext({
+  language: "tr",
+});

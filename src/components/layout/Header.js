@@ -107,19 +107,25 @@ const Header = ({
                     isActive && 'is-active'
                   )}>
                 <div className="header-nav-inner">
-                  {getLink(navPosition, closeMenu, "Home", "")}
-                  {getLink(navPosition, closeMenu, "Sectors", "sectors")}
-                  {getLink(navPosition, closeMenu, "About Us", "about-us")}
-                  {getLink(navPosition, closeMenu, "Contact Us", "contact-us")}
-                  {!hideSignin &&
-                    <ul className="list-reset header-nav-right">
-                      <li>
-                        <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sign up</Link>
-                      </li>
-                    </ul>}
-                  <li>
-                    <LanguageSwitcher />
-                  </li>
+
+                  <ul className={classNames(
+                    'list-reset text-xs',
+                    navPosition && `header-nav-${navPosition}`
+                  )}>
+                    {getLink(navPosition, closeMenu, "Home", "")}
+                    {getLink(navPosition, closeMenu, "Sectors", "sectors")}
+                    {getLink(navPosition, closeMenu, "About Us", "about-us")}
+                    {getLink(navPosition, closeMenu, "Contact Us", "contact-us")}
+                    {!hideSignin &&
+                      <ul className="list-reset header-nav-right">
+                        <li>
+                          <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sign up</Link>
+                        </li>
+                      </ul>}
+                    <li>
+                      <LanguageSwitcher />
+                    </li>
+                  </ul>
                 </div>
               </nav>
             </>}
@@ -137,14 +143,9 @@ export default Header;
 
 function getLink(navPosition, closeMenu, text, link) {
   return (
-    <ul className={classNames(
-      'list-reset text-xs',
-      navPosition && `header-nav-${navPosition}`
-    )}>
-      <li>
-        <Link to={link} onClick={closeMenu}>{text}</Link>
-      </li>
-    </ul>
+    <li>
+      <Link to={link} onClick={closeMenu}>{text}</Link>
+    </li>
   );
 }
 

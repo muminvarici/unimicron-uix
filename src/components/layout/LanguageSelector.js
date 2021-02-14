@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from '../elements/Select';
 
 const languages = [
     { code: 'en', name: 'English' },
@@ -28,58 +29,26 @@ const getTranslation = (lang, text) => {
     return translations[lang][text];
 }
 
-export class LanguageSwitcher extends React.Component {
-    state = {
-        lang: 'en'
-    };
-
+export class LanguageSwitcher extends React.Component { 
     changeLanguageHandler = (lang) => {
         this.setState({ lang: lang });
     }
 
     render() {
+        console.log(this.state);
         return (
-            <div className="languageSwitcher">
-                {/* <p>
-                    {getTranslation(this.state.lang, 'paragraf')}
-                </p>
-                <h2>
-                    {getTranslation(this.state.lang, 'header')}
-                </h2>
-                <p className="small">
-                    {getTranslation(this.state.lang, 'lang-choice')}
-                </p> */}
-                {/* <LanguageSwitcherSelector
-                    lang={this.state.lang}
-                    handleChangeLanguage={this.changeLanguageHandler}
-                /> */}
+            
+            <div className="languageSelector">
+                <Select class="form-select" id="color" size="sm" onChange={this.onChange}  >
+                    <option vlaue="en" >EN</option>
+                    <option vlaue="tr" >TR</option>
+                    <option vlaue="de" >DEU</option>
+                </Select>
             </div>
         )
+    }
+    onChange = e => {
+        this.props.handleChangeLanguage && this.props.handleChangeLanguage(e.target.className);
+        console.log("language switched to", e.target.value);
     }
 }
-
-export class LanguageSwitcherSelector extends React.Component {
-    onChange = e => {
-        this.props.handleChangeLanguage(e.target.className);
-    }
-
-    render() {
-        const options = languages.map(language => {
-            if (language.code != this.props.lang) {
-                return <li onClick={this.onChange}><div value={language.code} className={language.code} ></div></li>
-            }
-        });
-
-        return (
-            <div className="lang">
-                <div
-                    className={this.props.lang}
-                >
-                </div>
-                <ul class="dropdown" >
-                    {options}
-                </ul>
-            </div>
-        )
-    }
-} 
