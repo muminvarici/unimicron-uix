@@ -70,7 +70,7 @@ const ContactUs = ({
         const linkText = "+90 532 707 81 93";
         const link = "tel:" + linkText;
         return (
-            <div className="tiles-item reveal-from-bottom" data-reveal-delay="600">
+            <div className="tiles-item reveal-from-bottom" data-reveal-delay="800">
                 <div className="tiles-item-inner">
                     <div className="features-tiles-item-header">
                         <a href={link}>
@@ -94,7 +94,7 @@ const ContactUs = ({
     const getLocationItem = () => {
         const link = "geo:124.028582,-29.201930"
         return (
-            <div className="tiles-item reveal-from-bottom" data-reveal-delay="400">
+            <div className="tiles-item reveal-from-bottom" data-reveal-delay="600">
                 <div className="tiles-item-inner">
                     <div className="features-tiles-item-header">
                         <a href={link} target="_blank">
@@ -129,20 +129,23 @@ const ContactUs = ({
                 confirmButtonColor="#000000"
                 onConfirm={() => setInfoMessageVisibility(false)}
             />
+            <div className="container-xs">
+                <div className="reveal-from-bottom" data-reveal-delay="400">
+                    <div className="tiles-item-inner">
+                        <form>
+                            <Input type="text" className="form-control" placeholder="Title" name="title" onChange={handleInputChange} />
+                            <Input type="text" className="form-control" name="given-name" placeholder="Name" onChange={handleInputChange} />
+                            <Input type="email" placeholder="Email address" name="email" className="form-control" aria-describedby="emailHelp" onChange={handleInputChange} />
+                            <Input type="textarea" placeholder="Message" className="form-control" rows="3" name="message" onChange={handleInputChange}></Input>
+                            <Button type="button" onClick={clickSubmit} color="dark" loading={submitButtonLoadingActive} >Submit</Button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <div className="container">
                 <div className={innerClasses}>
                     <div className={tilesClasses}>
-                        <div className="tiles-item reveal-from-bottom" data-reveal-delay="400">
-                            <div className="tiles-item-inner">
-                                <form id="contact-form" method="POST">
-                                    <Input type="text" className="form-control" placeholder="Title" name="title" onChange={handleInputChange} />
-                                    <Input type="text" className="form-control" name="given-name" placeholder="Name" onChange={handleInputChange} />
-                                    <Input type="email" placeholder="Email address" name="email" className="form-control" aria-describedby="emailHelp" onChange={handleInputChange} />
-                                    <Input type="textarea" placeholder="Message" className="form-control" rows="5" name="message" onChange={handleInputChange}></Input>
-                                    <Button type="button" onClick={clickSubmit} color="dark" loading={submitButtonLoadingActive} >Submit</Button>
-                                </form>
-                            </div>
-                        </div>
                         {getLocationItem()}
                         {getCallItem()}
                     </div>
