@@ -14,7 +14,7 @@ export class Images extends React.Component {
 
   images = [
     require('./../../../assets/images/slider1.jpg'),
-    require('./../../../assets/images/slider2.jpg'),
+    require('./../../../assets/images/slider2_1.jpg'),
   ];
   constructor() {
     super()
@@ -24,13 +24,18 @@ export class Images extends React.Component {
     return (
       <>
         <AutoplaySlider play={true}
+          style={{
+            "--slider-height-percentage": "40%",
+          }}
           cancelOnInteraction={false} // should stop playing on user interaction
-          interval={3000}
+          interval={3500}
         >
           {this.images.map((item, i) => {
             console.log("Entered");
             // Return the element. Also pass key     
-            return (<div className="has-shadow" data-src={item} />)
+            return (
+              <div className="has-shadow" data-src={item} />
+            )
           })}
         </AutoplaySlider>
       </>
