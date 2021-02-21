@@ -1,4 +1,10 @@
 {
+    "Menu": {
+        "Home": "Ana Sayfa",
+        "Sectors": "Sektörler",
+        "AboutUs": "Hakkımızda",
+        "ContactUs": "Bize Ulaşın"
+    },
     "Home": {},
     "AboutUs": {},
     "Sectors": {

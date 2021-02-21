@@ -1,4 +1,10 @@
 {
+    "Menu": {
+        "Home": "Home",
+        "Sectors": "Sectors",
+        "AboutUs": "About Us",
+        "ContactUs": "Contact Us"
+    },
     "Home": {},
     "AboutUs": {},
     "Sectors": {
