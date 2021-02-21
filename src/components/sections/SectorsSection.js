@@ -61,7 +61,7 @@ const SectorsSection = ({
     >
       <div className="container">
         <div className={innerClasses}>
-          <SectionHeader data={getSectionHeader()} className={["reveal-from-bottom", "center-content"]} data-reveal-delay="400" />
+          {/* <SectionHeader data={getSectionHeader()} className={["reveal-from-bottom", "center-content"]} data-reveal-delay="400" /> */}
           <div className={tilesClasses}>
             {getSectorItem("kedi_kumu.jpg", 1, "Kedi kumu", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}
             {getSectorItem("kedi_kumu.jpg", 2, "Kedi kumu", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat.")}

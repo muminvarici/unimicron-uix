@@ -14,7 +14,7 @@
 
 	.brand {
 		margin-right: $header-nav--padding-h;
-	}	
+	}
 }
 
 .site-header-inner {
@@ -132,6 +132,10 @@
 			}
 		}
 	}
+
+	.brand-logo{
+		width: $header-logo-width__mobile;
+	}
 }
 
 @include media( '>medium' ) {
@@ -148,5 +152,9 @@
 
 	.site-header-inner {
 		height: $header-height__desktop;
+	}
+	
+	.brand-logo{
+		width: $header-logo-width__desktop;
 	}
 }
