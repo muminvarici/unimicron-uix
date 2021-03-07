@@ -10,6 +10,16 @@ export const languageOptions = {
     de: 'DE'
 };
 
-export function getLanguageText({ languageContext, textId }) { 
-    return languageContext?.dictionary[textId] || textId;
+export function getLanguageText({ languageContext, textId }) {
+    const keys = textId?.split(".") ?? textId;
+
+    let element = languageContext?.dictionary;
+    for (let index = 0; index < keys.length; index++) {
+        const key = keys[index];
+        if (element[key] && typeof element[key] === 'string') {
+            return element[key];
+        }
+        element = element[key];
+    }
+    return textId;
 };

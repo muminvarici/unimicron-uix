@@ -1,9 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
 import LanguageSwitcher from './LanguageSelector';
+import { LanguageContext } from '../../App';
+import { getLanguageText } from '../../languages/languages';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -32,6 +34,7 @@ const Header = ({
 }) => {
 
   const [isActive, setIsactive] = useState(false);
+  const languageContext = useContext(LanguageContext);
 
   const nav = useRef(null);
   const hamburger = useRef(null);
@@ -112,10 +115,10 @@ const Header = ({
                     'list-reset text-xs',
                     navPosition && `header-nav-${navPosition}`
                   )}>
-                    {getLink(navPosition, closeMenu, "Home", "")}
-                    {getLink(navPosition, closeMenu, "Sectors", "sectors")}
-                    {getLink(navPosition, closeMenu, "About Us", "about-us")}
-                    {getLink(navPosition, closeMenu, "Contact Us", "contact-us")}
+                    {getLink(closeMenu, "Home", "", languageContext)}
+                    {getLink(closeMenu, "Sectors", "sectors", languageContext)}
+                    {getLink(closeMenu, "AboutUs", "about-us", languageContext)}
+                    {getLink(closeMenu, "ContactUs", "contact-us", languageContext)}
                     {!hideSignin &&
                       <ul className="list-reset header-nav-right">
                         <li>
@@ -141,10 +144,11 @@ Header.defaultProps = defaultProps;
 
 export default Header;
 
-function getLink(navPosition, closeMenu, text, link) {
+function getLink(closeMenu, text, link, languageContext) {
+  const languageText = getLanguageText({ languageContext, textId: "Menu." + text });
   return (
     <li>
-      <Link to={link} onClick={closeMenu}>{text}</Link>
+      <Link to={link} onClick={closeMenu}>{languageText}</Link>
     </li>
   );
 }

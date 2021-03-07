@@ -48,9 +48,9 @@ const SectorsSection = ({
   const languageContext = useContext(LanguageContext);
 
   const getSectionHeader = () => {
-    const languageText = getLanguageText({ languageContext, textId: "Sectors" });
-    console.log(languageText);
-    return languageText;
+    const title = getLanguageText({ languageContext, textId: "Sectors.title" });
+    const paragraph = getLanguageText({ languageContext, textId: "Sectors.paragraph" });
+    return { title, paragraph };
   }
 
 
