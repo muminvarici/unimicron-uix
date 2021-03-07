@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import { LanguageContext } from '../../../App';
+import { getLanguageText } from '../../../languages/languages';
 
 const FooterNav = ({
   className,
   ...props
 }) => {
+
+  const languageContext = useContext(LanguageContext);
+
 
   const classes = classNames(
     'footer-nav',
@@ -18,10 +23,10 @@ const FooterNav = ({
       className={classes}
     >
       <ul className="list-reset">
-          {getLink("Home", "")}
-          {getLink("Sectors", "sectors")}
-          {getLink("Contact us", "contact-us")}
-          {getLink("About us", "about-us")}
+        {getLink("Home", "", languageContext)}
+        {getLink("Sectors", "sectors", languageContext)}
+        {getLink("ContactUs", "contact-us", languageContext)}
+        {getLink("AboutUs", "about-us", languageContext)}
       </ul>
     </nav>
   );
@@ -29,7 +34,8 @@ const FooterNav = ({
 
 export default FooterNav;
 
-function getLink(text, link) {
+function getLink(text, link, languageContext) {
+  text = getLanguageText({ languageContext, textId: "Menu." + text });
   return (
     <li>
       <Link to={link}>{text}</Link>
